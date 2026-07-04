@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "title": "HBT — Handmade Brazilian Tobacco",
+    "description": "Tabaco artesanal brasileño con sobriedad europea. Handcrafted in Brazil."
+  },
+  "nav": {
+    "marca": "La Marca",
+    "exp": "Experiencia",
+    "contato": "Contacto",
+    "menu": "Abrir menú"
+  },
+  "hero": {
+    "title_1": "El contraste",
+    "title_2": "es el mensaje.",
+    "lede": "Negro como estructura. Blanco como voz. Una casa de tabaco artesanal nacida en Brasil, vestida de elegancia europea."
+  },
+  "feature": {
+    "eyebrow": "Presencia confirmada",
+    "body": "HBT estará presente en la mayor feria internacional del sector con su serie especial — envase en negro mate, tipografía blanca, una edición pensada para Dortmund. El alma brasileña bajo el foco europeo.",
+    "cta": "Conocer la serie"
+  },
+  "marca": {
+    "title": "Hecho a mano, en Brasil.",
+    "body1": "Cada hoja es elegida, curada y trabajada por manos que conocen el oficio. HBT nace del encuentro entre el tabaco noble brasileño y una estética de casa de lujo: sobria, silenciosa, precisa.",
+    "body2": "No vendemos ruido. Vendemos origen — y el cuidado que solo el trabajo artesanal lleva consigo.",
+    "link": "La historia completa"
+  },
+  "serie": {
+    "body1": "La serie especial que HBT presenta en Dortmund. Envase en negro mate, letras blancas, sin brillo — porque el brillo se lee como plástico, y el mate se lee como premium.",
+    "body2": "Edición limitada, concebida para coleccionistas y para quienes entienden el gesto de origen detrás de cada pieza.",
+    "link": "Ver la línea"
+  },
+  "exp": {
+    "title": "Ver. Sentir. Oír.",
+    "vision_key": "Vista",
+    "vision": "Negro mate y blanco puro. El ojo va directo a la luz.",
+    "aroma_key": "Aroma",
+    "aroma": "Familia amaderada-ámbar: tabaco noble, vainilla, cuero y un toque de cumaru brasileño.",
+    "sound_key": "Sonido",
+    "sound": "Bossa nova clásica, en clima lounge. La elegancia que se escucha.",
+    "link": "La experiencia HBT"
+  },
+  "footer": {
+    "contact": "Contacto",
+    "presence": "Presencia",
+    "origin_label": "Origen",
+    "location": "São Paulo ·
