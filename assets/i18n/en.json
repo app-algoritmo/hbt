@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "title": "HBT — Handmade Brazilian Tobacco",
+    "description": "Handcrafted Brazilian tobacco with European restraint. Handcrafted in Brazil."
+  },
+  "nav": {
+    "marca": "The Brand",
+    "exp": "Experience",
+    "contato": "Contact",
+    "menu": "Open menu"
+  },
+  "hero": {
+    "title_1": "Contrast",
+    "title_2": "is the message.",
+    "lede": "Black as structure. White as voice. A house of handmade tobacco born in Brazil, dressed in European elegance."
+  },
+  "feature": {
+    "eyebrow": "Presence confirmed",
+    "body": "HBT joins the sector's largest international fair with its special series — matte black packaging, white typography, an edition conceived for Dortmund. The Brazilian soul under the European spotlight.",
+    "cta": "Discover the series"
+  },
+  "marca": {
+    "title": "Handmade, in Brazil.",
+    "body1": "Every leaf is selected, cured and worked by hands that know the craft. HBT is born where fine Brazilian tobacco meets the aesthetic of a luxury house: restrained, silent, precise.",
+    "body2": "We don't sell noise. We sell origin — and the care that only handmade work carries.",
+    "link": "The full story"
+  },
+  "serie": {
+    "body1": "The special series HBT presents in Dortmund. Matte black packaging, white letters, no gloss — because gloss reads as plastic, and matte reads as premium.",
+    "body2": "A limited edition, conceived for collectors and for those who understand the gesture of origin behind each piece.",
+    "link": "View the line"
+  },
+  "exp": {
+    "title": "See. Feel. Hear.",
+    "vision_key": "Sight",
+    "vision": "Matte black and pure white. The eye goes straight to the light.",
+    "aroma_key": "Aroma",
+    "aroma": "A woody-amber family: fine tobacco, vanilla, leather and a touch of Brazilian cumaru.",
+    "sound_key": "Sound",
+    "sound": "Classic bossa nova, in a lounge mood. Elegance you can hear.",
+    "link": "The HBT experience"
+  },
+  "footer": {
+    "contact": "Contact",
+    "presence": "Presence",
+    "origin_label": "Origin",
+    "location": "São Paulo · Brazil",
+    "legal": "Intended exclusively for adults over 18. This site is institutional in nature and does not encourage tobacco consumption."
+  }
+}
