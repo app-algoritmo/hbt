@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HBT — Handmade Brazilian Tobacco</title>
+  <meta name="description" content="Tabaco artesanal brasileiro com sobriedade europeia. Handcrafted in Brazil." />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#0A0A0A" />
+
+  <link rel="alternate" hreflang="pt" href="?lang=pt" />
+  <link rel="alternate" hreflang="en" href="?lang=en" />
+  <link rel="alternate" hreflang="es" href="?lang=es" />
+  <link rel="alternate" hreflang="no" href="?lang=no" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <a class="wordmark" href="home.html" aria-label="HBT">HBT</a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="a-marca.html" data-i18n="nav.marca">A Marca</a>
+      <a href="special-serie.html">Special Serie</a>
+      <a href="experiencia.html" data-i18n="nav.exp">Experiência</a>
+      <a href="contato.html" data-i18n="nav.contato">Contato</a>
+      <span class="lang" role="group" aria-label="Idioma">
+        <button type="button" data-lang="pt">PT</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="es">ES</button>
+        <button type="button" data-lang="no">NO</button>
+      </span>
+    </nav>
+    <button class="nav-toggle" data-i18n-attr="aria-label:nav.menu" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__spot" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <p class="eyebrow reveal">Handmade Brazilian Tobacco</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="reveal" style="--d:1" data-i18n="hero.title_1">O contraste</span>
+          <span class="reveal" style="--d:2" data-i18n="hero.title_2">é a mensagem.</span>
+        </h1>
+        <p class="hero__lede reveal" style="--d:3" data-i18n="hero.lede">
+          Preto como estrutura. Branco como voz. Uma casa de tabaco artesanal
+          nascida no Brasil, vestida de elegância europeia.
+        </p>
+        <p class="hero__origin reveal" style="--d:4">Handcrafted in Brazil</p>
+      </div>
+      <a href="#intertabac" class="hero__scroll reveal" style="--d:5" aria-label="Descer"><span></span></a>
+    </section>
+
+    <!-- DESTAQUE INTERTABAC -->
+    <section class="feature" id="intertabac" aria-labelledby="feature-title">
+      <div class="feature__frame">
+        <p class="eyebrow eyebrow--amber" data-i18n="feature.eyebrow">Presença confirmada</p>
+        <p class="feature__place">InterTabac 2025 · Dortmund, Deutschland</p>
+        <h2 class="feature__title" id="feature-title">
+          HBT Special Serie
+          <em>InterTabac Edition</em>
+        </h2>
+        <p class="feature__body" data-i18n="feature.body">
+          A HBT marca presença na maior feira internacional do setor com sua série
+          especial — embalagem em preto fosco, tipografia branca, uma edição pensada
+          para Dortmund. A alma brasileira sob o holofote europeu.
+        </p>
+        <a class="btn" href="special-serie.html" data-i18n="feature.cta">Conhecer a série</a>
+      </div>
+    </section>
+
+    <!-- A MARCA -->
+    <section class="block" id="marca" aria-labelledby="marca-title">
+      <p class="block__index">01</p>
+      <div class="block__head">
+        <p class="eyebrow" data-i18n="nav.marca">A Marca</p>
+        <h2 class="block__title" id="marca-title" data-i18n="marca.title">Feito à mão, no Brasil.</h2>
+      </div>
+      <div class="block__body">
+        <p data-i18n="marca.body1">Cada folha é escolhida, curada e trabalhada por mãos que conhecem o ofício. A HBT nasce do encontro entre o tabaco nobre brasileiro e uma estética de casa de luxo: sóbria, silenciosa, precisa.</p>
+        <p class="muted" data-i18n="marca.body2">Não vendemos ruído. Vendemos origem — e o cuidado que só o trabalho artesanal carrega.</p>
+        <a class="link-arrow" href="a-marca.html" data-i18n="marca.link">A história completa</a>
+      </div>
+    </section>
+
+    <!-- SPECIAL SERIE -->
+    <section class="block block--alt" id="serie" aria-labelledby="serie-title">
+      <p class="block__index">02</p>
+      <div class="block__head">
+        <p class="eyebrow">Special Serie</p>
+        <h2 class="block__title" id="serie-title">InterTabac Edition</h2>
+      </div>
+      <div class="block__body">
+        <p data-i18n="serie.body1">A série especial que a HBT apresenta em Dortmund. Embalagem em preto fosco, letras brancas, nenhum brilho — porque brilho lê como plástico, e fosco lê como premium.</p>
+        <p class="muted" data-i18n="serie.body2">Edição limitada, concebida para colecionadores e para quem entende o gesto de origem por trás de cada peça.</p>
+        <a class="link-arrow" href="special-serie.html" data-i18n="serie.link">Ver a linha</a>
+      </div>
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+    <section class="block" id="experiencia" aria-labelledby="exp-title">
+      <p class="block__index">03</p>
+      <div class="block__head">
+        <p class="eyebrow" data-i18n="nav.exp">Experiência</p>
+        <h2 class="block__title" id="exp-title" data-i18n="exp.title">Ver. Sentir. Ouvir.</h2>
+      </div>
+      <div class="block__body">
+        <div class="sense">
+          <span class="sense__key" data-i18n="exp.vision_key">Visão</span>
+          <p data-i18n="exp.vision">Preto fosco e branco puro. O olho vai direto à luz.</p>
+        </div>
+        <div class="sense">
+          <span class="sense__key" data-i18n="exp.aroma_key">Aroma</span>
+          <p data-i18n="exp.aroma">Família amadeirada-âmbar: tabaco nobre, baunilha, couro e um toque de cumaru brasileiro.</p>
+        </div>
+        <div class="sense">
+          <span class="sense__key" data-i18n="exp.sound_key">Som</span>
+          <p data-i18n="exp.sound">Bossa nova clássica, em clima lounge. A elegância que se escuta.</p>
+        </div>
+        <a class="link-arrow" href="experiencia.html" data-i18n="exp.link">A experiência HBT</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer" id="contato">
+    <div class="footer__brand">
+      <svg class="leaf" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <path d="M32 4C20 14 10 26 10 40c0 11 9 20 22 20 3-16 6-28 6-40C38 12 35 7 32 4Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M32 8C32 24 32 44 30 58" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <path d="M31 22c-4 2-9 4-14 4M31 34c-5 2-11 4-17 4M31 46c-4 1-9 2-14 2" fill="none" stroke="currentColor" stroke-width="1"/>
+      </svg>
+      <span class="wordmark wordmark--footer">HBT</span>
+      <p class="footer__legalname">Handmade Brazilian Tobacco Ltda.</p>
+    </div>
+
+    <div class="footer__cols">
+      <div>
+        <p class="eyebrow" data-i18n="footer.contact">Contato</p>
+        <a href="mailto:contato@hbt.com.br">contato@hbt.com.br</a>
+        <a href="#" data-i18n="footer.location">São Paulo · Brasil</a>
+      </div>
+      <div>
+        <p class="eyebrow" data-i18n="footer.presence">Presença</p>
+        <a href="#intertabac">InterTabac 2025 — Dortmund</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+      <div>
+        <p class="eyebrow" data-i18n="footer.origin_label">Origem</p>
+        <p class="footer__origin">Handcrafted in Brazil</p>
+      </div>
+    </div>
+
+    <div class="footer__base">
+      <p class="footer__legal" data-i18n="footer.legal">
+        Produto destinado exclusivamente a maiores de 18 anos. Este site tem caráter
+        institucional e não incentiva o consumo de tabaco.
+      </p>
+      <p class="footer__copy">© <span id="year"></span> HBT — Handmade Brazilian Tobacco Ltda.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
