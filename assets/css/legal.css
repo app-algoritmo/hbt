@@ -1,0 +1,73 @@
+/* ============================================================
+   HBT — legal.css
+   Tipografia das páginas legais (depende de base.css)
+   ============================================================ */
+
+.legal {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: calc(var(--section-y) + 3rem) var(--gutter) var(--section-y);
+}
+
+.legal__eyebrow {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.32em;
+  color: var(--amber); margin-bottom: 1.2rem;
+}
+.legal__title {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(2.4rem, 6vw, 3.8rem); line-height: 1.05;
+  margin-bottom: 1rem;
+}
+.legal__meta {
+  font-size: 0.8rem; color: var(--ash); letter-spacing: 0.04em;
+  padding-bottom: 2.2rem; margin-bottom: 2.6rem;
+  border-bottom: 1px solid var(--hairline);
+}
+.legal__note {
+  background: var(--noir-2); border: 1px solid var(--hairline-2);
+  border-left: 2px solid var(--amber);
+  padding: 1.1rem 1.4rem; margin-bottom: 2.6rem;
+  font-size: 0.85rem; color: var(--ash); line-height: 1.6;
+}
+
+.legal h2 {
+  font-family: var(--serif); font-weight: 500;
+  font-size: 1.5rem; color: var(--voice);
+  margin: 2.6rem 0 0.9rem;
+}
+.legal h3 {
+  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16em;
+  color: var(--amber); margin: 1.8rem 0 0.6rem;
+}
+.legal p, .legal li {
+  color: var(--ash); font-size: 0.98rem; line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.legal strong { color: var(--voice); font-weight: 500; }
+.legal a { color: var(--amber); text-decoration: underline; text-underline-offset: 2px; }
+
+.legal ul { list-style: none; padding-left: 0; }
+.legal li { padding-left: 1.4rem; position: relative; margin-bottom: 0.6rem; }
+.legal li::before {
+  content: "—"; position: absolute; left: 0; color: var(--amber);
+}
+
+.legal__ph {
+  color: var(--amber); background: rgba(200,161,90,0.08);
+  padding: 0 0.35em; border-radius: 2px; font-style: normal;
+}
+
+.legal__back {
+  display: inline-block; margin-top: 3rem;
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.2em;
+  color: var(--voice);
+}
+.legal__back::before { content: "← "; color: var(--amber); }
+
+/* Tabela simples (política de cookies) */
+.legal table { width: 100%; border-collapse: collapse; margin: 1rem 0 2rem; }
+.legal th, .legal td {
+  text-align: left; padding: 0.8rem 0.6rem; font-size: 0.86rem;
+  border-bottom: 1px solid var(--hairline-2); color: var(--ash); vertical-align: top;
+}
+.legal th { color: var(--voice); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.72rem; }
