@@ -1,0 +1,170 @@
+/* ============================================================
+   HBT — base.css
+   Tokens, reset, tipografia e componentes compartilhados.
+   Preto = estrutura · Branco = voz · Âmbar = holofote (mínimo)
+   ============================================================ */
+
+:root {
+  --noir:      #0A0A0A;
+  --noir-2:    #101010;
+  --voice:     #FFFFFF;
+  --ash:       #9A9A9A;
+  --amber:     #C8A15A;
+  --hairline:  rgba(255, 255, 255, 0.12);
+  --hairline-2:rgba(255, 255, 255, 0.06);
+
+  --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans:  'Jost', 'Helvetica Neue', Arial, sans-serif;
+
+  --gutter: clamp(1.5rem, 5vw, 5rem);
+  --section-y: clamp(6rem, 14vh, 11rem);
+  --max: 1240px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  background: var(--noir);
+  color: var(--voice);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+:focus-visible { outline: 1px solid var(--amber); outline-offset: 4px; }
+
+/* ---------- Tipografia compartilhada ---------- */
+.eyebrow {
+  font-weight: 500; font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.32em; color: var(--ash);
+}
+.eyebrow--amber { color: var(--amber); }
+.muted { color: var(--ash); }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: fixed; inset: 0 0 auto 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; padding: 1.4rem var(--gutter);
+  background: linear-gradient(to bottom, rgba(10,10,10,0.85), rgba(10,10,10,0));
+  backdrop-filter: blur(2px);
+}
+.wordmark {
+  font-family: var(--serif); font-weight: 500; font-size: 1.6rem;
+  letter-spacing: 0.32em; padding-left: 0.32em; color: var(--voice);
+}
+
+.nav { display: flex; gap: clamp(1.4rem, 3vw, 2.8rem); align-items: center; }
+.nav a {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.2em;
+  color: var(--ash); position: relative; padding-block: 0.3rem;
+  transition: color 0.4s ease;
+}
+.nav a::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px;
+  background: var(--amber); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.nav a:hover { color: var(--voice); }
+.nav a:hover::after { transform: scaleX(1); }
+
+/* ---------- Seletor de idioma ---------- */
+.lang {
+  display: flex; align-items: center; gap: 0.55rem;
+  padding-left: clamp(1rem, 2vw, 1.8rem); margin-left: 0.4rem;
+  border-left: 1px solid var(--hairline);
+}
+.lang button {
+  font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--ash); transition: color 0.3s ease; line-height: 1;
+}
+.lang button:hover { color: var(--voice); }
+.lang button.is-active { color: var(--amber); }
+
+/* ---------- Botão / CTA ---------- */
+.btn {
+  display: inline-block; font-size: 0.72rem; text-transform: uppercase;
+  letter-spacing: 0.24em; color: var(--voice); border: 1px solid var(--hairline);
+  padding: 1.1rem 2.6rem;
+  transition: color 0.4s ease, border-color 0.4s ease, background 0.4s ease;
+}
+.btn:hover { color: var(--noir); background: var(--amber); border-color: var(--amber); }
+
+/* ---------- Link com seta ---------- */
+.link-arrow {
+  display: inline-block; margin-top: 0.8rem; font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.2em; color: var(--voice); position: relative;
+}
+.link-arrow::after { content: " →"; color: var(--amber); transition: margin-left 0.3s ease; }
+.link-arrow:hover::after { margin-left: 0.4rem; }
+
+/* ---------- Menu mobile toggle ---------- */
+.nav-toggle { display: none; flex-direction: column; gap: 5px; padding: 6px; }
+.nav-toggle span { width: 26px; height: 1px; background: var(--voice); transition: transform .35s ease, opacity .35s ease; }
+
+/* ---------- Rodapé ---------- */
+.site-footer { border-top: 1px solid var(--hairline); padding: var(--section-y) var(--gutter) 3rem; }
+.footer__brand {
+  max-width: var(--max); margin: 0 auto 4rem; display: flex; flex-direction: column;
+  align-items: center; text-align: center; gap: 1rem;
+}
+.leaf { width: 44px; height: 44px; color: var(--voice); opacity: 0.85; }
+.wordmark--footer { font-size: 2.4rem; }
+.footer__legalname { font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ash); }
+
+.footer__cols {
+  max-width: var(--max); margin: 0 auto; display: grid;
+  grid-template-columns: repeat(3, 1fr); gap: 2.5rem;
+  padding-bottom: 3.5rem; border-bottom: 1px solid var(--hairline-2);
+}
+.footer__cols .eyebrow { margin-bottom: 1.2rem; }
+.footer__cols a, .footer__origin {
+  display: block; font-size: 0.9rem; color: var(--ash); margin-bottom: 0.6rem;
+  transition: color 0.35s ease;
+}
+.footer__cols a:hover { color: var(--voice); }
+.footer__origin { color: var(--voice); letter-spacing: 0.1em; }
+
+.footer__base {
+  max-width: var(--max); margin: 2.5rem auto 0; display: flex;
+  justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap;
+}
+.footer__legal { font-size: 0.72rem; color: var(--ash); max-width: 60ch; line-height: 1.6; }
+.footer__copy { font-size: 0.72rem; color: var(--ash); letter-spacing: 0.08em; }
+
+/* ---------- Reveal ---------- */
+.reveal {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 1s ease, transform 1s ease;
+  transition-delay: calc(var(--d, 0) * 0.12s);
+}
+.reveal.is-in { opacity: 1; transform: none; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 860px) {
+  .nav {
+    display: none; position: fixed; inset: 0; flex-direction: column;
+    align-items: center; justify-content: center; gap: 2.2rem;
+    background: var(--noir); z-index: 40;
+  }
+  .nav.is-open { display: flex; }
+  .nav.is-open a { font-size: 1rem; }
+  .lang { border-left: 0; padding-left: 0; margin-left: 0; }
+  .nav-toggle { display: flex; z-index: 60; }
+  .footer__cols { grid-template-columns: 1fr; gap: 2rem; }
+  .footer__base { flex-direction: column; align-items: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}
