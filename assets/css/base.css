@@ -276,3 +276,20 @@ a.is-soon {
   color: var(--noir); background: var(--voice); border-color: var(--voice);
 }
 .footer__social svg { width: 15px; height: 15px; fill: currentColor; }
+
+/* ---------- Crédito Digital Solutions (delicado) ---------- */
+.footer__credit {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  margin-top: 0.5rem;
+  font-size: 0.66rem; letter-spacing: 0.08em;
+  color: var(--dim);                 /* cinza escuro — quase invisível */
+  transition: color 0.35s ease;
+}
+.footer__credit-mark {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.62rem; letter-spacing: 0;
+  color: var(--dim); opacity: 0.8;
+  transition: color 0.35s ease, opacity 0.35s ease;
+}
+.footer__credit:hover { color: var(--ash); }
+.footer__credit:hover .footer__credit-mark { color: var(--ash); opacity: 1; }
