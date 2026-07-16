@@ -1,0 +1,96 @@
+/* ============================================================
+   HBT — start.css
+   Página Start: entrada autoral (folhas magnéticas + som)
+   Depende de base.css para tokens e fontes.
+   ============================================================ */
+
+html, body { height: 100%; }
+
+.start {
+  position: fixed; inset: 0; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--noir);
+  transition: opacity 0.9s ease;
+}
+.start.is-leaving { opacity: 0; }
+
+.start__canvas {
+  position: absolute; inset: 0; z-index: 0;
+  pointer-events: none;
+}
+
+.start__spot {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(110% 110% at 50% 45%, rgba(255,255,255,0.035), transparent 62%),
+    radial-gradient(120% 120% at 50% 50%, transparent 58%, rgba(0,0,0,0.5) 100%);
+}
+
+.start__content {
+  position: relative; z-index: 2; text-align: center;
+  padding: 2rem; max-width: 90vw;
+  opacity: 0; transform: translateY(18px);
+  animation: start-in 1.4s cubic-bezier(.2,.7,.2,1) 0.2s forwards;
+}
+@keyframes start-in { to { opacity: 1; transform: none; } }
+
+.start__eyebrow {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.34em;
+  color: var(--ash); margin-bottom: 1.8rem;
+}
+.start__mark {
+  font-family: var(--font); font-weight: 700;
+  font-size: clamp(4.5rem, 16vw, 11rem); line-height: 1;
+  letter-spacing: 0.2em; padding-left: 0.2em; color: var(--voice);
+  margin-bottom: 1.2rem;
+}
+.start__tagline {
+  font-family: var(--font);  font-weight: 300;
+  font-size: clamp(1.1rem, 2.4vw, 1.7rem); color: var(--ash);
+  margin-bottom: 2.8rem;
+}
+
+.start__enter {
+  display: inline-flex; align-items: center; gap: 0.8rem;
+  font-family: var(--font); font-size: 0.74rem; text-transform: uppercase;
+  letter-spacing: 0.28em; color: var(--voice);
+  border: 1px solid var(--line-3); background: none; cursor: pointer;
+  padding: 1.15rem 3rem;
+  transition: color .4s ease, border-color .4s ease, background .4s ease, letter-spacing .4s ease;
+}
+.start__enter:hover {
+  color: var(--noir); background: var(--voice); border-color: var(--voice);
+  letter-spacing: 0.32em;
+}
+.start__enter svg { width: 14px; height: 14px; }
+
+.start__origin {
+  margin-top: 3.2rem; font-size: 0.68rem; text-transform: uppercase;
+  letter-spacing: 0.32em; color: var(--voice); opacity: 0.7;
+}
+
+/* Seletor de idioma (canto superior) */
+.start__lang {
+  position: absolute; top: clamp(1.4rem, 4vh, 2.6rem); left: 0; right: 0;
+  z-index: 3; display: flex; justify-content: center; gap: 0.9rem;
+}
+.start__lang button {
+  font-family: var(--font); font-size: 0.68rem; text-transform: uppercase;
+  letter-spacing: 0.16em; color: var(--ash); background: none; border: 0;
+  cursor: pointer; transition: color .3s ease; line-height: 1;
+}
+.start__lang button:hover { color: var(--voice); }
+.start__lang button.is-active { color: var(--voice); }
+
+/* dica de som, discreta */
+.start__hint {
+  position: absolute; bottom: clamp(1.4rem, 4vh, 2.4rem); left: 0; right: 0;
+  z-index: 3; text-align: center;
+  font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.24em;
+  color: var(--ash); opacity: 0.55; transition: opacity .6s ease;
+}
+.start__hint.is-hidden { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .start, .start__content { animation: none; transition: none; opacity: 1; transform: none; }
+}

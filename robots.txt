@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+# Rastreadores de IA — ajustar conforme a política da HBT
+User-agent: GPTBot
+Allow: /
+
+Sitemap: https://www.hbtofficial.com/sitemap.xml

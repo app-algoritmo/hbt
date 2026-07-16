@@ -1,0 +1,278 @@
+/* ============================================================
+   HBT — base.css
+   Monocromia absoluta. Preto = estrutura · Branco = voz.
+   Sem cor. Onde havia detalhe, há linha quase transparente.
+   Tipografia: Inter (sem itálico).
+   ============================================================ */
+
+:root {
+  /* Paleta — apenas três valores */
+  --noir:   #0A0A0A;   /* preto fosco — base */
+  --noir-2: #101010;   /* superfície levemente elevada */
+  --voice:  #FFFFFF;   /* branco — voz */
+  --ash:    #9A9A9A;   /* cinza — apoio */
+  --dim:    #5A5A5A;   /* cinza escuro — itens inativos / em breve */
+
+  /* Linhas quase transparentes (substituem qualquer cor de destaque) */
+  --line:   rgba(255, 255, 255, 0.14);
+  --line-2: rgba(255, 255, 255, 0.07);
+  --line-3: rgba(255, 255, 255, 0.30);
+
+  /* Tipografia — uma família, sem itálico */
+  --font: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+
+  --gutter: clamp(1.5rem, 5vw, 5rem);
+  --section-y: clamp(6rem, 14vh, 11rem);
+  --max: 1240px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  background: var(--noir);
+  color: var(--voice);
+  font-family: var(--font);
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Nada em itálico, em nenhum lugar */
+em, i, cite, address { font-style: normal; }
+
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+:focus-visible { outline: 1px solid var(--line-3); outline-offset: 4px; }
+
+/* ---------- Tipografia compartilhada ---------- */
+.eyebrow {
+  font-weight: 500; font-size: 0.7rem; text-transform: uppercase;
+  letter-spacing: 0.28em; color: var(--ash);
+}
+.muted { color: var(--ash); }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: fixed; inset: 0 0 auto 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; padding: 1.4rem var(--gutter);
+  background: linear-gradient(to bottom, rgba(10,10,10,0.92), rgba(10,10,10,0));
+  backdrop-filter: blur(3px);
+}
+.wordmark {
+  font-weight: 700; font-size: 1.4rem;
+  letter-spacing: 0.28em; padding-left: 0.28em; color: var(--voice);
+}
+
+.nav { display: flex; gap: clamp(1.4rem, 3vw, 2.6rem); align-items: center; }
+.nav a {
+  font-size: 0.72rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.16em;
+  color: var(--ash); position: relative; padding-block: 0.3rem;
+  transition: color 0.35s ease;
+}
+.nav a::after {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px;
+  background: var(--voice); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.35s ease;
+}
+.nav a:hover { color: var(--voice); }
+.nav a:hover::after { transform: scaleX(1); }
+
+/* Item ainda sem conteúdo — cinza, sem link */
+.nav .is-soon,
+a.is-soon {
+  color: var(--dim); cursor: default; pointer-events: none;
+}
+.nav .is-soon::after { display: none; }
+
+/* ---------- Seletor de idioma ---------- */
+.lang {
+  display: flex; align-items: center; gap: 0.6rem;
+  padding-left: clamp(1rem, 2vw, 1.6rem); margin-left: 0.4rem;
+  border-left: 1px solid var(--line);
+}
+.lang button {
+  font-size: 0.66rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--dim); transition: color 0.3s ease; line-height: 1;
+}
+.lang button:hover { color: var(--ash); }
+.lang button.is-active { color: var(--voice); }
+
+/* ---------- Botão ---------- */
+.btn {
+  display: inline-block; font-size: 0.72rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.2em;
+  color: var(--voice); border: 1px solid var(--line-3);
+  padding: 1.05rem 2.6rem; background: transparent;
+  transition: color 0.35s ease, background 0.35s ease, border-color 0.35s ease;
+}
+.btn:hover { color: var(--noir); background: var(--voice); border-color: var(--voice); }
+
+/* ---------- Link com seta ---------- */
+.link-arrow {
+  display: inline-block; margin-top: 0.8rem; font-size: 0.72rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.16em; color: var(--voice);
+  border-bottom: 1px solid var(--line); padding-bottom: 0.35rem;
+  transition: border-color 0.35s ease;
+}
+.link-arrow::after { content: "  \2192"; color: var(--ash); transition: color .35s ease; }
+.link-arrow:hover { border-color: var(--voice); }
+.link-arrow:hover::after { color: var(--voice); }
+
+/* ---------- Menu mobile ---------- */
+.nav-toggle { display: none; flex-direction: column; gap: 5px; padding: 6px; }
+.nav-toggle span { width: 26px; height: 1px; background: var(--voice); transition: transform .35s ease, opacity .35s ease; }
+
+/* ---------- Reveal ---------- */
+.reveal {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity .9s ease, transform .9s ease;
+  transition-delay: calc(var(--d, 0) * 0.1s);
+}
+.reveal.is-in { opacity: 1; transform: none; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 900px) {
+  .nav {
+    display: none; position: fixed; inset: 0; flex-direction: column;
+    align-items: center; justify-content: center; gap: 2rem;
+    background: var(--noir); z-index: 40; overflow-y: auto; padding: 5rem 1.5rem;
+  }
+  .nav.is-open { display: flex; }
+  .nav.is-open a { font-size: 1rem; }
+  .lang { border-left: 0; padding-left: 0; margin-left: 0; }
+  .nav-toggle { display: flex; z-index: 60; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+/* ============================================================
+   RODAPÉ — mapa completo do site
+   ============================================================ */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: clamp(4rem, 8vh, 6rem) var(--gutter) 2.5rem;
+  background: var(--noir);
+}
+
+.footer__top {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 1.4fr repeat(4, 1fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  padding-bottom: 3.5rem; border-bottom: 1px solid var(--line-2);
+}
+
+.footer__brand-col { display: flex; flex-direction: column; gap: 1rem; }
+.footer__brand-col .leaf { width: 34px; height: 34px; color: var(--voice); opacity: .8; }
+.footer__mark { font-weight: 700; font-size: 1.5rem; letter-spacing: .28em; padding-left:.28em; }
+.footer__tag {
+  font-size: .72rem; text-transform: uppercase; letter-spacing: .2em;
+  color: var(--ash); line-height: 1.8;
+}
+
+.footer__col h3 {
+  font-size: .68rem; font-weight: 600; text-transform: uppercase;
+  letter-spacing: .22em; color: var(--voice);
+  padding-bottom: .9rem; margin-bottom: 1rem;
+  border-bottom: 1px solid var(--line-2);
+}
+.footer__col a,
+.footer__col span {
+  display: block; font-size: .85rem; color: var(--ash);
+  margin-bottom: .65rem; transition: color .3s ease;
+}
+.footer__col a:hover { color: var(--voice); }
+
+/* Página ainda sem conteúdo */
+.footer__col .is-soon {
+  color: var(--dim); cursor: default; pointer-events: none;
+  display: flex; align-items: baseline; gap: .5rem;
+}
+.footer__col .is-soon::after {
+  content: "em breve";
+  font-size: .58rem; text-transform: uppercase; letter-spacing: .14em;
+  color: var(--dim); border: 1px solid var(--line-2);
+  padding: .1rem .35rem; white-space: nowrap;
+}
+
+/* base do rodapé */
+.footer__base {
+  max-width: var(--max); margin: 2.2rem auto 0;
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 2rem; flex-wrap: wrap;
+}
+.footer__legal { font-size: .72rem; color: var(--ash); max-width: 62ch; line-height: 1.7; }
+.footer__meta { display: flex; flex-direction: column; gap: .4rem; text-align: right; }
+.footer__copy { font-size: .72rem; color: var(--dim); }
+.footer__origin {
+  font-size: .68rem; text-transform: uppercase; letter-spacing: .24em; color: var(--voice);
+}
+.footer__cc {
+  font-size: .72rem; color: var(--ash); background: none; border: 0;
+  border-bottom: 1px solid var(--line); padding: 0 0 .15rem; cursor: pointer;
+  transition: color .3s ease, border-color .3s ease;
+}
+.footer__cc:hover { color: var(--voice); border-color: var(--voice); }
+
+@media (max-width: 1000px) {
+  .footer__top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .footer__brand-col { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .footer__top { grid-template-columns: 1fr; }
+  .footer__base { flex-direction: column; }
+  .footer__meta { text-align: left; }
+}
+
+/* ============================================================
+   PÁGINA EM CONSTRUÇÃO (aguardando conteúdo oficial)
+   ============================================================ */
+.soon {
+  min-height: 76svh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+  padding: 10rem var(--gutter) 6rem; max-width: 640px; margin-inline: auto;
+}
+.soon__eyebrow { margin-bottom: 1.4rem; }
+.soon__title {
+  font-weight: 600; font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.4rem;
+}
+.soon__text { color: var(--ash); margin-bottom: 2.4rem; max-width: 46ch; }
+.soon__rule { width: 100%; height: 1px; background: var(--line-2); margin-bottom: 2.4rem; }
+.soon__back {
+  font-size: 0.72rem; font-weight: 500; text-transform: uppercase;
+  letter-spacing: 0.16em; color: var(--voice);
+  border-bottom: 1px solid var(--line); padding-bottom: .35rem;
+  transition: border-color .3s ease;
+}
+.soon__back:hover { border-color: var(--voice); }
+
+/* ---------- 404 ---------- */
+.nf { text-align: center; }
+.nf__code {
+  font-weight: 700; font-size: clamp(4.5rem, 14vw, 9rem);
+  line-height: 1; letter-spacing: -0.04em; color: var(--voice); margin-bottom: .5rem;
+}
+
+/* ---------- Ícones sociais (rodapé) ---------- */
+.footer__social {
+  display: flex; gap: .9rem; margin-top: 1.2rem;
+}
+.footer__social a {
+  display: flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px;
+  border: 1px solid var(--line); color: var(--ash);
+  transition: color .3s ease, border-color .3s ease, background .3s ease;
+}
+.footer__social a:hover {
+  color: var(--noir); background: var(--voice); border-color: var(--voice);
+}
+.footer__social svg { width: 15px; height: 15px; fill: currentColor; }

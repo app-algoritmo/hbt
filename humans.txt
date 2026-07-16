@@ -1,0 +1,17 @@
+/* EQUIPE */
+Cliente: HBT — Handmade Brazilian Tobacco Ltda.
+Diretor de Operações Globais: Paulo Barros
+COO: Natália Bellan
+Diretora de Comunicação: Paula Azzar
+
+/* DESENVOLVIMENTO */
+Digital Solutions — Norge · Vestland
+Site: https://www.dsnorge.com
+Contato: info@dsnorge.com
+
+/* TECNOLOGIA */
+HTML5, CSS3, JavaScript (sem frameworks)
+Tipografia: Inter
+Multilíngue: PT · EN · ES · NO
+Acessibilidade: WCAG 2.1 AA
+Conformidade: ISO 9001 · ISO 14001 · LGPD · GDPR

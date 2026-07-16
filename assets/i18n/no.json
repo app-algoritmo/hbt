@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "HBT — Handmade Brazilian Tobacco",
+    "description": "Håndlaget brasiliansk tobakk med europeisk eleganse. Handcrafted in Brazil."
+  },
+  "nav": {
+    "marca": "Merkevaren",
+    "exp": "Opplevelse",
+    "contato": "Kontakt",
+    "menu": "Åpne meny"
+  },
+  "hero": {
+    "title_1": "Kontrasten",
+    "title_2": "er budskapet.",
+    "lede": "Svart som struktur. Hvitt som stemme. Et hus for håndlaget tobakk født i Brasil, kledd i europeisk eleganse."
+  },
+  "feature": {
+    "eyebrow": "Tilstedeværelse bekreftet",
+    "body": "HBT er til stede på bransjens største internasjonale messe med sin spesialserie — matt svart emballasje, hvit typografi, en utgave skapt for Dortmund. Den brasilianske sjelen i det europeiske rampelyset.",
+    "cta": "Oppdag serien"
+  },
+  "marca": {
+    "title": "Håndlaget, i Brasil.",
+    "body1": "Hvert blad blir valgt, tørket og bearbeidet av hender som kjenner håndverket. HBT oppstår der edel brasiliansk tobakk møter estetikken til et luksushus: sobert, stille, presist.",
+    "body2": "Vi selger ikke støy. Vi selger opprinnelse — og omsorgen som bare håndverk bærer med seg.",
+    "link": "Hele historien"
+  },
+  "serie": {
+    "body1": "Spesialserien HBT presenterer i Dortmund. Matt svart emballasje, hvite bokstaver, ingen glans — for glans leses som plast, og matt leses som premium.",
+    "body2": "Et begrenset opplag, skapt for samlere og for dem som forstår opprinnelsesgesten bak hvert stykke.",
+    "link": "Se serien"
+  },
+  "exp": {
+    "title": "Se. Føle. Høre.",
+    "vision_key": "Syn",
+    "vision": "Matt svart og rent hvitt. Øyet går rett til lyset.",
+    "aroma_key": "Aroma",
+    "aroma": "En treaktig-ravfamilie: edel tobakk, vanilje, lær og et snev av brasiliansk cumaru.",
+    "sound_key": "Lyd",
+    "sound": "Klassisk bossa nova, i lounge-stemning. Eleganse du kan høre.",
+    "link": "HBT-opplevelsen"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "presence": "Tilstedeværelse",
+    "origin_label": "Opprinnelse",
+    "location": "São Paulo · Brasil",
+    "legal": "Kun ment for voksne over 18 år. Dette nettstedet er av institusjonell karakter og oppfordrer ikke til bruk av tobakk."
+  },
+  "soon": {
+    "text": "Denne siden er under arbeid. Offisielt innhold publiseres snart.",
+    "back": "Tilbake til start"
+  },
+  "nf": {
+    "title": "Siden ble ikke funnet.",
+    "text": "Adressen finnes ikke eller er flyttet."
+  }
+}

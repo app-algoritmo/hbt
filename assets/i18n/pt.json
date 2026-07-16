@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "HBT — Handmade Brazilian Tobacco",
+    "description": "Tabaco artesanal brasileiro com sobriedade europeia. Handcrafted in Brazil."
+  },
+  "nav": {
+    "marca": "A Marca",
+    "exp": "Experiência",
+    "contato": "Contato",
+    "menu": "Abrir menu"
+  },
+  "hero": {
+    "title_1": "O contraste",
+    "title_2": "é a mensagem.",
+    "lede": "Preto como estrutura. Branco como voz. Uma casa de tabaco artesanal nascida no Brasil, vestida de elegância europeia."
+  },
+  "feature": {
+    "eyebrow": "Presença confirmada",
+    "body": "A HBT marca presença na maior feira internacional do setor com sua série especial — embalagem em preto fosco, tipografia branca, uma edição pensada para Dortmund. A alma brasileira sob o holofote europeu.",
+    "cta": "Conhecer a série"
+  },
+  "marca": {
+    "title": "Feito à mão, no Brasil.",
+    "body1": "Cada folha é escolhida, curada e trabalhada por mãos que conhecem o ofício. A HBT nasce do encontro entre o tabaco nobre brasileiro e uma estética de casa de luxo: sóbria, silenciosa, precisa.",
+    "body2": "Não vendemos ruído. Vendemos origem — e o cuidado que só o trabalho artesanal carrega.",
+    "link": "A história completa"
+  },
+  "serie": {
+    "body1": "A série especial que a HBT apresenta em Dortmund. Embalagem em preto fosco, letras brancas, nenhum brilho — porque brilho lê como plástico, e fosco lê como premium.",
+    "body2": "Edição limitada, concebida para colecionadores e para quem entende o gesto de origem por trás de cada peça.",
+    "link": "Ver a linha"
+  },
+  "exp": {
+    "title": "Ver. Sentir. Ouvir.",
+    "vision_key": "Visão",
+    "vision": "Preto fosco e branco puro. O olho vai direto à luz.",
+    "aroma_key": "Aroma",
+    "aroma": "Família amadeirada-âmbar: tabaco nobre, baunilha, couro e um toque de cumaru brasileiro.",
+    "sound_key": "Som",
+    "sound": "Bossa nova clássica, em clima lounge. A elegância que se escuta.",
+    "link": "A experiência HBT"
+  },
+  "footer": {
+    "contact": "Contato",
+    "presence": "Presença",
+    "origin_label": "Origem",
+    "location": "São Paulo · Brasil",
+    "legal": "Produto destinado exclusivamente a maiores de 18 anos. Este site tem caráter institucional e não incentiva o consumo de tabaco."
+  },
+  "soon": {
+    "text": "Esta página está em preparação. O conteúdo oficial será publicado em breve.",
+    "back": "Voltar ao início"
+  },
+  "nf": {
+    "title": "Página não encontrada.",
+    "text": "O endereço acessado não existe ou foi movido."
+  }
+}
