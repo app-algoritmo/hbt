@@ -124,6 +124,8 @@
       +     '<span class="footer__origin">Handcrafted in Brazil</span>'
       +     '<button type="button" class="footer__cc" data-cc="open">' + T.cc + '</button>'
       +     '<span class="footer__copy" translate="no">© ' + year + ' HBT — Handmade Brazilian Tobacco Ltda.</span>'
+      +     '<a class="footer__credit" href="https://www.dsnorge.com" target="_blank" rel="noopener noreferrer" translate="no">'
+      +       '<span class="footer__credit-mark">&lt;/&gt;</span> Developed by Digital Solutions</a>'
       +   '</div>'
       + '</div>';
   }
