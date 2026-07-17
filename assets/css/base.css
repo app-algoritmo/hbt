@@ -203,16 +203,19 @@ a.is-soon {
   padding: .1rem .35rem; white-space: nowrap;
 }
 
-/* base do rodapé */
+/* base do rodapé — 18+ à esquerda · fecho à direita */
 .footer__base {
   max-width: var(--max); margin: 2.2rem auto 0;
-  display: flex; justify-content: space-between; align-items: flex-start;
-  gap: 2rem; flex-wrap: wrap;
+  display: flex; justify-content: space-between; align-items: flex-end;
+  gap: 2.5rem;
 }
-.footer__legal { font-size: .72rem; color: var(--ash); max-width: 62ch; line-height: 1.7; }
-.footer__meta { display: flex; flex-direction: column; gap: .4rem; text-align: right; }
+.footer__legal { font-size: .72rem; color: var(--ash); max-width: 58ch; line-height: 1.7; }
+.footer__meta {
+  display: flex; flex-direction: column; align-items: flex-end;
+  gap: .55rem; text-align: right; flex: none;
+}
 .footer__copy { font-size: .72rem; color: var(--dim); }
-.footer__origin {
+.footer__origin {   /* mantido no CSS; não é usado na base (fica na coluna da marca) */
   font-size: .68rem; text-transform: uppercase; letter-spacing: .24em; color: var(--voice);
 }
 .footer__cc {
@@ -222,14 +225,29 @@ a.is-soon {
 }
 .footer__cc:hover { color: var(--voice); border-color: var(--voice); }
 
+/* ---------- Tablet ---------- */
 @media (max-width: 1000px) {
   .footer__top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   .footer__brand-col { grid-column: 1 / -1; }
 }
-@media (max-width: 560px) {
-  .footer__top { grid-template-columns: 1fr; }
-  .footer__base { flex-direction: column; }
-  .footer__meta { text-align: left; }
+
+/* ---------- Smartphone ---------- */
+@media (max-width: 620px) {
+  .footer__top { grid-template-columns: 1fr; gap: 2.2rem; }
+  /* base empilha: tudo alinhado à esquerda, ordem legível */
+  .footer__base {
+    flex-direction: column; align-items: stretch;
+    gap: 1.6rem; margin-top: 2.6rem;
+  }
+  .footer__legal { max-width: none; order: 2; }
+  .footer__meta {
+    align-items: flex-start; text-align: left;
+    gap: .8rem; order: 1;
+    padding-bottom: 1.6rem; border-bottom: 1px solid var(--line-2);
+  }
+  /* cookies vira alvo tocável confortável no mobile */
+  .footer__cc { padding: .55rem 0; font-size: .8rem; }
+  .footer__credit { margin-top: .2rem; }
 }
 
 /* ============================================================
