@@ -41,50 +41,53 @@
     applyLang();
   });
 
-  /* -------------------- Áudio: ruído de folhas -------------------- */
-  /* Sintetizado com Web Audio (sem arquivo). Inicia só após 1º gesto.
-     Para trocar por gravação real: carregue assets/audio/leaves.mp3. */
-  var actx, noiseSrc, audioGain, audioReady = false;
+  /* -------------------- Áudio: bossa nova (bossa.mp3) -------------------- */
+  /* Arquivo real em assets/audio/bossa.mp3. Toca só após o 1º gesto do
+     usuário (exigência dos navegadores), com fade-in suave e em loop. */
+  var audioEl, audioReady = false, audioMuted = false;
+  var FADE_MS = 1600, TARGET_VOL = 0.55;
+
+  function fadeTo(target, ms) {
+    if (!audioEl) return;
+    var start = audioEl.volume, t0 = performance.now();
+    (function step(now) {
+      var k = Math.min(1, (now - t0) / ms);
+      var v = start + (target - start) * k;
+      audioEl.volume = Math.max(0, Math.min(1, v));   // trava em [0,1]
+      if (k < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+
   function startAudio() {
     if (audioReady || reduce) return;
     try {
-      actx = new (window.AudioContext || window.webkitAudioContext)();
-      var secs = 4;
-      var buffer = actx.createBuffer(1, actx.sampleRate * secs, actx.sampleRate);
-      var data = buffer.getChannelData(0);
-      // ruído com flutuação de amplitude (folhas secas)
-      var last = 0;
-      for (var i = 0; i < data.length; i++) {
-        var white = Math.random() * 2 - 1;
-        last = (last + 0.02 * white) / 1.02;      // ruído "amarronzado"
-        var flutter = 0.5 + 0.5 * Math.sin(i * 0.0006) * Math.sin(i * 0.00013);
-        data[i] = last * 3.2 * flutter * (0.6 + 0.4 * Math.random());
-      }
-      noiseSrc = actx.createBufferSource();
-      noiseSrc.buffer = buffer; noiseSrc.loop = true;
-
-      var bp = actx.createBiquadFilter(); bp.type = 'bandpass';
-      bp.frequency.value = 3200; bp.Q.value = 0.7;
-      var hp = actx.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 1400;
-
-      audioGain = actx.createGain(); audioGain.gain.value = 0;
-      noiseSrc.connect(hp); hp.connect(bp); bp.connect(audioGain); audioGain.connect(actx.destination);
-      noiseSrc.start();
-      audioGain.gain.linearRampToValueAtTime(0.06, actx.currentTime + 1.2);
-      audioReady = true;
-      var hint = document.getElementById('s-hint'); if (hint) hint.classList.add('is-hidden');
-    } catch (e) { /* silêncio em caso de bloqueio */ }
+      audioEl = new Audio('assets/audio/bossa.mp3');
+      audioEl.loop = true;
+      audioEl.volume = 0;
+      audioEl.play().then(function () {
+        audioReady = true;
+        fadeTo(TARGET_VOL, FADE_MS);
+        var hint = document.getElementById('s-hint'); if (hint) hint.classList.add('is-hidden');
+        var mute = document.getElementById('s-mute'); if (mute) mute.classList.add('is-visible');
+      }).catch(function () { /* navegador bloqueou; tentará no próximo gesto */ audioReady = false; });
+    } catch (e) { /* sem áudio */ }
   }
-  function swellAudio() {
-    if (!audioReady || !audioGain) return;
-    var now = actx.currentTime;
-    audioGain.gain.cancelScheduledValues(now);
-    audioGain.gain.setValueAtTime(audioGain.gain.value, now);
-    audioGain.gain.linearRampToValueAtTime(0.16, now + 0.25);
-    audioGain.gain.linearRampToValueAtTime(0.0, now + 0.9);
+
+  function toggleMute() {
+    if (!audioEl) return;
+    audioMuted = !audioMuted;
+    fadeTo(audioMuted ? 0 : TARGET_VOL, 400);
+    var mute = document.getElementById('s-mute');
+    if (mute) mute.setAttribute('aria-pressed', audioMuted ? 'true' : 'false');
+    if (mute) mute.classList.toggle('is-muted', audioMuted);
   }
+
   // primeiro gesto em qualquer lugar libera o som
   window.addEventListener('pointerdown', startAudio, { once: true });
+  document.addEventListener('DOMContentLoaded', function () {
+    var mute = document.getElementById('s-mute');
+    if (mute) mute.addEventListener('click', function (e) { e.stopPropagation(); toggleMute(); });
+  });
 
   /* -------------------- Canvas: folhas picadas -------------------- */
   var canvas = document.getElementById('leaf-canvas');
@@ -174,7 +177,7 @@
 
   /* -------------------- Entrar -> Home -------------------- */
   function enter() {
-    startAudio(); swellAudio();
+    startAudio();
     var el = document.querySelector('.start');
     el.classList.add('is-leaving');
     setTimeout(function () { window.location.href = 'home.html'; }, reduce ? 100 : 850);
