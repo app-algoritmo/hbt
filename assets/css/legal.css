@@ -71,3 +71,27 @@
   border-bottom: 1px solid var(--hairline-2); color: var(--ash); vertical-align: top;
 }
 .legal th { color: var(--voice); font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.72rem; }
+
+/* ---------- Tabela responsiva (mobile) ---------- */
+.legal table { table-layout: fixed; }
+.legal th, .legal td { word-wrap: break-word; overflow-wrap: anywhere; }
+@media (max-width: 620px) {
+  .legal { padding-left: 1.2rem; padding-right: 1.2rem; }
+  .legal table { font-size: 0.8rem; }
+  .legal th, .legal td { padding: 0.6rem 0.4rem; }
+}
+
+/* ---------- Disclaimer de tradução (versões não-PT) ---------- */
+.legal__disclaimer {
+  border-left: 2px solid var(--voice);
+  background: var(--noir-2);
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0 2rem;
+}
+.legal__disclaimer strong { color: var(--voice); font-weight: 500; }
+
+/* Título longo (ex.: norueguês) não pode estourar em telas estreitas */
+.legal__title { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; }
+@media (max-width: 380px) {
+  .legal__title { font-size: 1.6rem; }
+}
