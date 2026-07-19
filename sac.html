@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SAC — HBT</title>
+  <meta name="description" content="Atendimento ao consumidor da HBT — Handmade Brazilian Tobacco." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="favicon.ico" sizes="32x32" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta name="google" content="notranslate" />
+  <link rel="stylesheet" href="assets/css/fonts.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="wordmark" href="home.html" aria-label="HBT" translate="no">HBT</a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="a-marca.html" data-i18n="nav.marca">A Marca</a>
+      <a href="special-serie.html" translate="no">Special Serie</a>
+      <a href="experiencia.html" data-i18n="nav.exp">Experiência</a>
+      <a href="contato.html" data-i18n="nav.contato">Contato</a>
+      <span class="lang" role="group" aria-label="Idioma" translate="no">
+        <button type="button" data-lang="pt">PT</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="es">ES</button>
+        <button type="button" data-lang="no">NO</button>
+      </span>
+    </nav>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <main class="sac">
+    <p class="eyebrow sac__eyebrow" data-i18n="sac.eyebrow">Atendimento ao Consumidor</p>
+    <h1 class="sac__title" data-i18n="sac.title">Estamos à disposição.</h1>
+    <p class="sac__lead" data-i18n="sac.lead">Fale com a HBT pelo nosso canal de atendimento ao consumidor. Atendimento humano, com o cuidado que a marca preza.</p>
+
+    <!-- Número por trás do link (não exposto como texto). Trocar ⟦NUMERO⟧ pelo real: formato 55DDDNUMERO -->
+    <a class="sac__wa" id="sac-wa" href="https://wa.me/⟦NUMERO⟧" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.13h-.01c-1.52 0-3.01-.41-4.31-1.18l-.31-.18-3.2.84.85-3.12-.2-.32a8.23 8.23 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.41-.56-.42h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+      <span data-i18n="sac.whatsapp">Falar no WhatsApp</span>
+    </a>
+
+    <div class="sac__rule"></div>
+
+    <div class="sac__info">
+      <div class="sac__item">
+        <span class="sac__k" data-i18n="sac.hours_label">Horário de atendimento</span>
+        <span class="sac__v" data-i18n="sac.hours">Segunda a sexta, das 9h às 18h (horário de Brasília).</span>
+      </div>
+      <div class="sac__item">
+        <span class="sac__k" data-i18n="sac.phone_label">0800</span>
+        <span class="sac__v sac__soon" data-i18n="sac.phone_soon">Em breve</span>
+      </div>
+    </div>
+
+    <p class="sac__legal" data-i18n="sac.legal" translate="no">Produto destinado exclusivamente a maiores de 18 anos.</p>
+    <a class="sac__back" href="home.html" data-i18n="sac.back">Voltar ao início</a>
+  </main>
+
+  <footer class="site-footer"></footer>
+
+  <script src="assets/js/seo.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/footer.js"></script>
+  <script src="assets/js/cookies.js"></script>
+</body>
+</html>
