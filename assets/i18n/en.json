@@ -54,5 +54,18 @@
   "nf": {
     "title": "Page not found.",
     "text": "The address you requested does not exist or has been moved."
+  },
+  "sac": {
+    "eyebrow": "Customer Service",
+    "title": "We are here for you.",
+    "lead": "Reach HBT through our customer service channel. Human support, with the care the brand stands for.",
+    "whatsapp": "Chat on WhatsApp",
+    "hours_label": "Service hours",
+    "hours": "Monday to Friday, 9am to 6pm (Brasília time).",
+    "phone_label": "Toll-free",
+    "phone_soon": "Coming soon",
+    "email_label": "E-mail",
+    "back": "Back to home",
+    "legal": "Intended exclusively for adults over 18."
   }
 }

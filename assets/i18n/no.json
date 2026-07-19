@@ -54,5 +54,18 @@
   "nf": {
     "title": "Siden ble ikke funnet.",
     "text": "Adressen finnes ikke eller er flyttet."
+  },
+  "sac": {
+    "eyebrow": "Kundeservice",
+    "title": "Vi er her for deg.",
+    "lead": "Kontakt HBT via vår kundeservicekanal. Menneskelig hjelp, med omtanken merkevaren står for.",
+    "whatsapp": "Chat på WhatsApp",
+    "hours_label": "Åpningstider",
+    "hours": "Mandag til fredag, 09–18 (Brasília-tid).",
+    "phone_label": "Gratisnummer",
+    "phone_soon": "Kommer snart",
+    "email_label": "E-post",
+    "back": "Tilbake til start",
+    "legal": "Kun ment for voksne over 18 år."
   }
 }

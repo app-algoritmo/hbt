@@ -54,5 +54,18 @@
   "nf": {
     "title": "Página não encontrada.",
     "text": "O endereço acessado não existe ou foi movido."
+  },
+  "sac": {
+    "eyebrow": "Atendimento ao Consumidor",
+    "title": "Estamos à disposição.",
+    "lead": "Fale com a HBT pelo nosso canal de atendimento ao consumidor. Atendimento humano, com o cuidado que a marca preza.",
+    "whatsapp": "Falar no WhatsApp",
+    "hours_label": "Horário de atendimento",
+    "hours": "Segunda a sexta, das 9h às 18h (horário de Brasília).",
+    "phone_label": "0800",
+    "phone_soon": "Em breve",
+    "email_label": "E-mail",
+    "back": "Voltar ao início",
+    "legal": "Produto destinado exclusivamente a maiores de 18 anos."
   }
 }

@@ -54,5 +54,18 @@
   "nf": {
     "title": "Página no encontrada.",
     "text": "La dirección solicitada no existe o ha sido movida."
+  },
+  "sac": {
+    "eyebrow": "Atención al Cliente",
+    "title": "Estamos a su disposición.",
+    "lead": "Comuníquese con HBT por nuestro canal de atención al cliente. Atención humana, con el cuidado que la marca valora.",
+    "whatsapp": "Hablar por WhatsApp",
+    "hours_label": "Horario de atención",
+    "hours": "De lunes a viernes, de 9h a 18h (hora de Brasilia).",
+    "phone_label": "0800",
+    "phone_soon": "Próximamente",
+    "email_label": "Correo",
+    "back": "Volver al inicio",
+    "legal": "Producto destinado exclusivamente a mayores de 18 años."
   }
 }
