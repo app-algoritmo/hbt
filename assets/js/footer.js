@@ -13,27 +13,48 @@
   /* Mapa do site — mudar 'soon' para 'live' quando a página tiver conteúdo */
   var MAP = {
     marca: [
-      { href: 'a-marca.html',       label: 'A Marca',        state: 'soon' },
-      { href: 'special-serie.html', label: 'Special Serie',  state: 'soon', noTranslate: true },
-      { href: 'experiencia.html',   label: 'Experiência',    state: 'soon' },
-      { href: 'contato.html',       label: 'Contato',        state: 'soon' }
+      { href: 'a-marca.html',       key: 'a-marca',      state: 'soon' },
+      { href: 'special-serie.html', key: 'special-serie',state: 'soon', noTranslate: true },
+      { href: 'experiencia.html',   key: 'experiencia',  state: 'soon' },
+      { href: 'contato.html',       key: 'contato',      state: 'soon' }
     ],
     institucional: [
-      { href: 'governanca.html',      label: 'Governança & Liderança', state: 'soon' },
-      { href: 'ciencia.html',         label: 'Ciência & Inovação',     state: 'soon' },
-      { href: 'sustentabilidade.html',label: 'Sustentabilidade',       state: 'soon' },
-      { href: 'investidores.html',    label: 'Investidores',           state: 'soon' }
+      { href: 'governanca.html',      key: 'governanca',      state: 'soon' },
+      { href: 'ciencia.html',         key: 'ciencia',         state: 'soon' },
+      { href: 'sustentabilidade.html',key: 'sustentabilidade',state: 'soon' },
+      { href: 'investidores.html',    key: 'investidores',    state: 'soon' }
     ],
     mais: [
-      { href: 'imprensa.html',   label: 'Imprensa',        state: 'soon' },
-      { href: 'carreiras.html',  label: 'Carreiras',       state: 'soon' },
-      { href: 'presenca.html',   label: 'Presença Global', state: 'soon' }
+      { href: 'imprensa.html',   key: 'imprensa',  state: 'soon' },
+      { href: 'carreiras.html',  key: 'carreiras', state: 'soon' },
+      { href: 'presenca.html',   key: 'presenca',  state: 'soon' },
+      { href: 'sac.html',        key: 'sac',       state: 'live' }
     ],
     legal: [
-      { href: 'privacidade.html', label: 'Privacidade',    state: 'live' },
-      { href: 'termos.html',      label: 'Termos de Uso',  state: 'live' },
-      { href: 'cookies.html',     label: 'Cookies',        state: 'live' }
+      { href: 'privacidade.html', key: 'privacidade', state: 'live' },
+      { href: 'termos.html',      key: 'termos',      state: 'live' },
+      { href: 'cookies.html',     key: 'cookies',     state: 'live' }
     ]
+  };
+
+  /* Nomes das páginas, por idioma */
+  var LABELS = {
+    pt: { 'a-marca':'A Marca', 'special-serie':'Special Serie', 'experiencia':'Experiência', 'contato':'Contato',
+          'governanca':'Governança & Liderança', 'ciencia':'Ciência & Inovação', 'sustentabilidade':'Sustentabilidade', 'investidores':'Investidores',
+          'imprensa':'Imprensa', 'carreiras':'Carreiras', 'presenca':'Presença Global', 'sac':'SAC',
+          'privacidade':'Privacidade', 'termos':'Termos de Uso', 'cookies':'Cookies' },
+    en: { 'a-marca':'The Brand', 'special-serie':'Special Serie', 'experiencia':'Experience', 'contato':'Contact',
+          'governanca':'Governance & Leadership', 'ciencia':'Science & Innovation', 'sustentabilidade':'Sustainability', 'investidores':'Investors',
+          'imprensa':'Press', 'carreiras':'Careers', 'presenca':'Global Presence', 'sac':'Customer Service',
+          'privacidade':'Privacy', 'termos':'Terms of Use', 'cookies':'Cookies' },
+    es: { 'a-marca':'La Marca', 'special-serie':'Special Serie', 'experiencia':'Experiencia', 'contato':'Contacto',
+          'governanca':'Gobernanza y Liderazgo', 'ciencia':'Ciencia e Innovación', 'sustentabilidade':'Sostenibilidad', 'investidores':'Inversores',
+          'imprensa':'Prensa', 'carreiras':'Carreras', 'presenca':'Presencia Global', 'sac':'Atención al Cliente',
+          'privacidade':'Privacidad', 'termos':'Términos de Uso', 'cookies':'Cookies' },
+    no: { 'a-marca':'Merkevaren', 'special-serie':'Special Serie', 'experiencia':'Opplevelse', 'contato':'Kontakt',
+          'governanca':'Styring og ledelse', 'ciencia':'Vitenskap og innovasjon', 'sustentabilidade':'Bærekraft', 'investidores':'Investorer',
+          'imprensa':'Presse', 'carreiras':'Karriere', 'presenca':'Global tilstedeværelse', 'sac':'Kundeservice',
+          'privacidade':'Personvern', 'termos':'Vilkår for bruk', 'cookies':'Cookies' }
   };
 
   var TITLES = {
@@ -83,13 +104,15 @@
   }
 
   function col(title, items) {
+    var L = LABELS[lang()] || LABELS.pt;
     var html = '<div class="footer__col"><h3>' + title + '</h3>';
     items.forEach(function (it) {
       var nt = it.noTranslate ? ' translate="no"' : '';
+      var label = L[it.key] || (LABELS.pt[it.key] || it.key);
       if (it.state === 'live') {
-        html += '<a href="' + it.href + '"' + nt + '>' + it.label + '</a>';
+        html += '<a href="' + it.href + '"' + nt + '>' + label + '</a>';
       } else {
-        html += '<span class="is-soon"' + nt + '>' + it.label + '</span>';
+        html += '<span class="is-soon"' + nt + '>' + label + '</span>';
       }
     });
     return html + '</div>';
